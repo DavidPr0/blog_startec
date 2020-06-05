@@ -33,9 +33,10 @@ export default () => {
             <RouteHandler private exact path="/addconteudo">
                 <AddConteudo />
             </RouteHandler>
-            <RouteHandler exact path="/listagem">
+            {/* <RouteHandler exact path="/listagem">
                 <Listagem />
-            </RouteHandler>
+            </RouteHandler> */}
+            <Route path="/listagem" component={Listagem} />
             <RouteHandler>
                 <NotFound />
             </RouteHandler>

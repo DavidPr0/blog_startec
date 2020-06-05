@@ -36,7 +36,9 @@ export default () => {
             {/* <RouteHandler exact path="/listagem">
                 <Listagem />
             </RouteHandler> */}
-            <Route path="/listagem" component={Listagem} />
+            <BrowserRouter >
+                <Route path="/listagem" component={Listagem} />
+            </BrowserRouter>
             <RouteHandler>
                 <NotFound />
             </RouteHandler>

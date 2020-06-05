@@ -36,6 +36,22 @@ export const Conteu = styled.div`
             color: #474747;
         }
     }
+@media (max-width: 600px) {
+    & { 
+        margin-top: 35px;
+    }
+
+    .contImagem img {
+        height: 150px;
+    }
+
+    header{
+        h1 {
+            height: 150px;
+        }
+    }
+
+}
 `;
 
 export const Loadings = styled.div`

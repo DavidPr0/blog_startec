@@ -6,7 +6,6 @@ export const Conteu = styled.div`
         box-shadow: -1px 0px 30px 0px rgba(50, 50, 50, 0.42);
         margin: 20px;
         display: block;
-        margin:
         background: #fff;
         padding-bottom: 7px;
         transition: all .2s;
@@ -36,4 +35,19 @@ export const Conteu = styled.div`
             color: #474747;
         }
     }
+@media (max-width: 600px) {
+    width: 85%;
+    margin: auto;
+    a {
+        margin: 20px 40px;
+    }
+    header{
+        h1 {
+            height: 131px;
+        }
+    }
+    .contImagem img {
+        height: 165px;
+    }
+}
 `;

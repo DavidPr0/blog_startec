@@ -28,7 +28,7 @@ const TopoPainel = () => {
                     {logged &&
                         <>
                         <li>
-                            <Link className="admin" to="/signup">Poste Conteúdo</Link>
+                            <Link className="admin" to="/addconteudo">Poste Conteúdo</Link>
                         </li>
                         <li className="btn_experimentar" >
                             <button onClick={ handleLogout }>Sair</button>

@@ -61,5 +61,21 @@ border-bottom: 1px solid #ccc;
     .admin {
         margin: 4px
     }
-
+@media (max-width: 600px) {
+    & {
+        height: auto;
+    }
+    .container {
+        flex-direction: column;
+    }
+    .logo {
+        justify-content: center;
+    }
+    nav {
+        margin: 0 auto;
+    }
+    .spanTopo {
+        margin: 0 7px;
+    }
+}
 `;

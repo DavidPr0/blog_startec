@@ -274,7 +274,48 @@ export const SearchArea = styled.div`
             color: #fff;
         }
     }
-    
+
+@media (max-width: 600px) {
+    .searchBox {
+        flex-direction: column;
+        margin: 0px 20px;
+        form input {
+            padding: 10px;
+            margin-bottom: 10px;
+            margin-left: 0px;
+        }
+        .blogContato {
+            button {
+                margin-right: 0px;
+                border-radius: 0% 18% 18% 0% / 56% 50% 60% 50%;
+            }
+        }
+    }
+    .destaque {
+        flex-direction: column;
+        .destaquesItem, .subDestaquesItem {
+            width: 90%;
+            margin: 10px 19px;
+        }
+    }
+    .blogContatoDivisor {
+        display: block;
+        input {
+            position: relative;
+            width: 58%;
+        }
+        button {
+            top: -10px;
+            width: 139px;
+        }
+        span {
+            padding: 12px 26px;
+            margin: 0;
+        }
+    }
+
+}
+
 `;
 
 export const PageArea = styled.div`

@@ -58,17 +58,36 @@ export const PageArea = styled.div`
         margin-left: 1%;
         width: 24%;
     }
+@media (max-width: 600px) {
+    & {
+        flex-direction: column;
+    }
+    .leftSide {
+        width: 90%;
+        margin: auto;
+    }
+    .rightSide {
+        width: 70%;
+        margin: auto;
+    }
+}
+
 `;
 
 export const BodyArea = styled.div`
 background: #dbdbdb;
-.imgDestaque {
+    .imgDestaque {
         margin-bottom: 20px;   
     }
     .imgDestaque img {
         width: 100%;
         height: 560px;
     }
+@media (max-width: 600px) {
+    .imgDestaque img {
+        height: 330px;
+    }
+}
 `;
 
 export const Loading = styled.div`

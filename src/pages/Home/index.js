@@ -4,7 +4,7 @@ import useApi from '../../helpers/BlogAPI';
 import ConteudoItem from '../../components/partials/ConteudoItem';
 
 import { PageContainer } from '../../components/MainComponents';
-import PainelTopo from '../../components/painel';
+// import PainelTopo from '../../components/painel';
 import { Link } from 'react-router-dom';
 
 const Page = () => {
@@ -46,7 +46,7 @@ const Page = () => {
             <SearchArea>
                 <PageContainer>
                     <div className="searchBox">
-                        <form method="GET" action="/ads">
+                        <form method="GET" action="/listagem">
                             <input type="text" name="q" placeholder="Busca..." />
                             <button>Pesquisar</button>
                         </form>
@@ -134,11 +134,11 @@ const Page = () => {
 
                     </div>
                     <div className="btn_verT">
-                        <Link to="/ads" className="seeAllConteudo">Carregar Mais</Link>
+                        <Link to="/listagem" className="seeAllConteudo">Carregar Mais</Link>
                     </div>
 
-                    <hr/>
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing."
+                    {/* <hr/>
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing." */}
                 </PageArea>
             </PageContainer>
         </SearchArea>

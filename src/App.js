@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import './App.css';
 
@@ -15,8 +15,10 @@ const Page = (props) => {
 		<BrowserRouter>
 			<Template>
 				<Header />
+				<Switch>
 					<Routes />
-				<Footer />
+				{/* <Footer /> */}
+				</Switch>
 			</Template>
 		</BrowserRouter>
 	);	

@@ -74,7 +74,13 @@ border-bottom: 1px solid #ccc;
         }
     }
     .admin {
-        margin: 4px
+        margin: 10px;
+        font-size: 17px;
+        transition: all .3s;
+        font-family: "Raleway-Bold";
+        &:hover {
+            color: #cb601a;
+        }
     }
 
 `;

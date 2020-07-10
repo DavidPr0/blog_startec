@@ -89,7 +89,7 @@ const Page = () => {
                                     {/* <span></span> */}
                             </div>
                             <div className="bg-img">
-                                <img src="https://abrilexame.files.wordpress.com/2020/03/gettyimages-1207671528-1.jpg" alt="" />
+                                <img src="https://macmagazine.uol.com.br/wp-content/uploads/2020/06/24-login-face-id.jpg.webp" alt="" />
                             </div>
                         </Link>
                         <Link to="/" className="subDestaquesItem">
@@ -99,7 +99,7 @@ const Page = () => {
                                     {/* <span></span> */}
                             </div>
                             <div className="bg-img">
-                                <img src="https://abrilexame.files.wordpress.com/2020/04/dsc6621baixa.jpg" alt="" />
+                                <img src="https://macmagazine.uol.com.br/wp-content/uploads/2020/03/23-MacBook-Windows-1260x840.jpg.webp" alt="" />
                             </div>
                         </Link>
                         <Link to="/" className="subDestaquesItem">
@@ -109,7 +109,7 @@ const Page = () => {
                                     {/* <span></span> */}
                             </div>
                             <div className="bg-img">
-                                <img src="https://abrilexame.files.wordpress.com/2020/04/size_960_16_9_penney3.jpg" alt="" />
+                                <img src="https://macmagazine.uol.com.br/wp-content/uploads/2020/06/24-traseira-1260x709.jpg.webp" alt="" />
                             </div>
                         </Link>
                     </div>

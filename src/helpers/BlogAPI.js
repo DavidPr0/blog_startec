@@ -1,7 +1,9 @@
 import Cookies from 'js-cookie';
 import qs from 'qs';
 
-const BASEAPI = 'http://alunos.b7web.com.br:501';
+// const BASEAPI = 'http://alunos.b7web.com.br:501';
+const BASEAPI = 'http://localhost/startec/api-cms';
+// const BASEAPI = 'http://api-cms.com.br';
 
 const apiFetchFile = async (endpoint, body) => {
     if (!body.token) {
@@ -32,7 +34,7 @@ const apiFetchPost = async ( endpoint, body ) => {
             body.token = token;
         }
     }
-
+    console.log('passou aqui');
     const res = await fetch(BASEAPI+endpoint, {
         method: 'POST',
         headers: {
@@ -71,18 +73,18 @@ const apiFetchGet = async ( endpoint, body = [] ) => {
 }
 
 const OlxAPI = {
-    login: async (email, password) => {
+    login: async (email, senha) => {
         const json = await apiFetchPost(
-            '/user/signin',
-            { email, password }
+            '/usuarios/login',
+            { email, senha }
         );
         return json;
     },
 
-    register:async (name, email, password, estadoLoc) => {
+    register:async (nome, email, senha) => {
         const json = await apiFetchPost(
-            '/user/signup',
-            {name, email, password, state:estadoLoc}
+            '/usuarios/novo',
+            {nome, email, senha}
         );
         return json;
     },
@@ -117,15 +119,41 @@ const OlxAPI = {
         return json;
     },
 
-    getCategorias:async () => {
+    getTemas:async () => {
         const json = await apiFetchGet(
-            '/categories'
+            '/temas'
         );
-        return json.categories;
+    
+        return json.retorno;
     },
+ 
+    getAutores:async () => {
+        const json = await apiFetchGet(
+            '/autores'
+        );
+    
+        return json.retorno;
+    },
+
     addAd:async (fData) => {
         const json = await apiFetchFile(
-            '/ad/add',
+            '/conteudos/novo',
+            fData
+        );
+        return json;
+    },
+
+    cadAutor:async (fData) => {
+        const json = await apiFetchFile(
+            '/autores/novo',
+            fData
+        );
+        return json;
+    },
+
+    cadTema:async (fData) => {
+        const json = await apiFetchFile(
+            '/temas/novo',
             fData
         );
         return json;

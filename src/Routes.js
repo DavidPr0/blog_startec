@@ -10,6 +10,8 @@ import NotFound from './pages/NotFound';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import AddConteudo from './pages/AddConteudo';
+import CadTemas from './pages/CadTemas';
+import CadAutor from './pages/CadAutor';
 import Listagem from './pages/Listagem';
 
 export default () => {
@@ -33,12 +35,15 @@ export default () => {
             <RouteHandler private exact path="/addconteudo">
                 <AddConteudo />
             </RouteHandler>
-            {/* <RouteHandler exact path="/listagem">
+            <RouteHandler private exact path="/cadtemas">
+                <CadTemas />
+            </RouteHandler>
+            <RouteHandler private exact path="/cadautor">
+                <CadAutor />
+            </RouteHandler>
+            <RouteHandler exact path="/listagem">
                 <Listagem />
-            </RouteHandler> */}
-            <BrowserRouter >
-                <Route path="/listagem" component={Listagem} />
-            </BrowserRouter>
+            </RouteHandler>
             <RouteHandler>
                 <NotFound />
             </RouteHandler>

@@ -23,3 +23,11 @@ export const ErrorMessage = styled.div`
     border: 2px solid #ff0000;
     padding: 10px;
 `;
+
+export const SucessoMessage = styled.div`
+    margin: 0 10px;
+    background: #f7b63b;
+    color: #000;
+    border: 2px solid #cb601a;
+    padding: 10px;
+`;

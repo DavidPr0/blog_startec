@@ -15,20 +15,26 @@ const Page = () => {
 
     const [title, setTitle] = useState('');
     const [texto, setTexto] = useState('');
-    // const [autor, setAutor] = useState('');
-    const [preco, setPreco] = useState('');
-    const [categorias, setCategorias] = useState([]);
-    const [categoria, setCategoria] = useState('');
+    const [autores, setAutores] = useState([]);
+    const [autor, setAutor] = useState('');
+    const [temas, setTemas] = useState([]);
+    const [tema, setTema] = useState('');
     
     const [disabled, setDisabled] = useState(false);
     const [error, setError] = useState('');
 
     useEffect(() => {
-        const getCategorias = async () => {
-            const cats = await api.getCategorias();
-            setCategorias(cats);
+        const getTemas = async () => {
+            const tem = await api.getTemas();
+            setTemas(tem);
         }
-        getCategorias();
+        getTemas();
+
+        const getAutores = async () => {
+            const aut = await api.getAutores();
+            setAutores(aut);
+        }
+        getAutores();
     }, []);
 
     const handleSubmit = async (e) => {
@@ -40,20 +46,20 @@ const Page = () => {
         if (!title.trim()) {
             erros.push('Sem título');
         }
-        if (!categoria) {
-            erros.push('Sem categoria');
-        }
+        // if (!categoria) {
+        //     erros.push('Sem categoria');
+        // }
 
         if (erros.length === 0) {
             const fData = new FormData();
             fData.append('title', title);
-            fData.append('price', preco);
+            // fData.append('price', preco);
             fData.append('desc', texto);
-            fData.append('cat', categoria);
+            // fData.append('cat', categoria);
 
             if (fileField.current.files.length > 0) {
                 for(let i = 0; i < fileField.current.files.length; i++ ) {
-                    fData.append('img', fileField.current.files[i]);
+                    fData.append('img[]', fileField.current.files[i]);
                 }
             }
 
@@ -115,6 +121,20 @@ const Page = () => {
                             </div>
                         </label>
                         <label className="area">
+                            <div className="area--title">Tema:</div>
+                            <div className="area--input">
+                                <select
+                                    disabled={disabled}
+                                    onChange={e => setTema(e.target.value)}
+                                >
+                                    <option></option>
+                                    {temas && temas.map(i => 
+                                        <option key={i.idtema} value={i.idtema}>{i.nome_tema}</option>    
+                                    )}
+                                </select>
+                            </div>
+                        </label>
+                        <label className="area">
                             <div className="area--title">Imagens do conteúdo:</div>
                             <div className="area--input">
                                 <input
@@ -126,16 +146,16 @@ const Page = () => {
                             </div>
                         </label>
                         <label className="area">
-                            <div className="area--title">Categorias:</div>
+                            <div className="area--title">Autor:</div>
                             <div className="area--input">
                                 <select
                                     disabled={disabled}
-                                    onChange={e => setCategoria(e.target.value)}
-                                    required
+                                    onChange={e => setAutor(e.target.value)}
+                                    
                                 >
                                     <option></option>
-                                    {categorias && categorias.map(i => 
-                                        <option key={i._id} value={i._id}>{i.name}</option>    
+                                    {autores && autores.map(i => 
+                                        <option key={i.idautor} value={i.idautor}>{i.nome_aut}</option>    
                                     )}
                                 </select>
                             </div>
@@ -143,13 +163,13 @@ const Page = () => {
                         <label className="area">
                             <div className="area--title">Preços:</div>
                             <div className="area--input">
-                                <MaskedInput 
+                                {/* <MaskedInput 
                                     mask={priceMask}
                                     placeholder="R$ "
                                     disabled={disabled}
                                     value={preco}
                                     onChange={ e => setPreco(e.target.value)}
-                                />
+                                /> */}
                             </div>
                         </label>
                         {/* <label className="area">
@@ -168,7 +188,7 @@ const Page = () => {
                         <label className="area">
                             <div className="area--title"></div>
                             <div className="area--input">
-                                <button disabled={disabled}>Fazer Login</button>
+                                <button disabled={disabled}>Cadastrar</button>
                             </div>
                         </label>                    
                     </form>

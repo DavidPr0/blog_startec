@@ -12,7 +12,7 @@ const Page = () => {
     const [name, setName] = useState('');
     const [estadoLoc, setEstadoLoc] = useState('');
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [senha, setSenha] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     
     const [disabled, setDisabled] = useState(false);
@@ -32,18 +32,18 @@ const Page = () => {
         setDisabled(true);
         setError('');
 
-        if (password !== confirmPassword) {
+        if (senha !== confirmPassword) {
             setError('Confirme senha é diferente!');
             setDisabled(false);
             return;
         }
 
-        const json = await api.register(name, email, password, estadoLoc);
+        const json = await api.register(name, email, senha);
 
         if (json.error) {
             setError(json.error);
         } else {
-            doLogin(json.token);
+            doLogin(json.jwt);
             window.location.href = '/admin';
         }
         setDisabled(false);
@@ -71,7 +71,7 @@ const Page = () => {
                                 />
                             </div>
                         </label>
-                        <label className="area">
+                        {/* <label className="area">
                             <div className="area--title">Estado</div>
                             <div className="area--input">
                                 <select>
@@ -81,7 +81,7 @@ const Page = () => {
                                     )}
                                 </select>
                             </div>
-                        </label>
+                        </label> */}
                         <label className="area">
                             <div className="area--title">E-mail</div>
                             <div className="area--input">
@@ -100,8 +100,8 @@ const Page = () => {
                                 <input
                                     type="password"
                                     disabled={disabled}
-                                    value={ password }
-                                    onChange={ e => setPassword(e.target.value) }
+                                    value={ senha }
+                                    onChange={ e => setSenha(e.target.value) }
                                     required
                                 />
                             </div>

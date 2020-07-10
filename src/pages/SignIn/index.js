@@ -10,7 +10,7 @@ const Page = () => {
     const api = useApi();
 
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [senha, setSenha] = useState('');
     const [rememberPassword, setRememberPassword] = useState(false);
     const [disabled, setDisabled] = useState(false);
     const [error, setError] = useState('');
@@ -19,12 +19,13 @@ const Page = () => {
         setDisabled(true);
         setError('');
         
-        const json = await api.login(email, password);
+        const json = await api.login(email, senha);
 
         if (json.error) {
             setError(json.error);
         } else {
-            doLogin(json.token, rememberPassword);
+            // console.log(json.token);
+            doLogin(json.jwt, rememberPassword);
             window.location.href = '/';
         }
         setDisabled(false);
@@ -58,8 +59,8 @@ const Page = () => {
                                 <input
                                     type="password"
                                     disabled={disabled}
-                                    value={ password }
-                                    onChange={ e => setPassword(e.target.value) }
+                                    value={ senha }
+                                    onChange={ e => setSenha(e.target.value) }
                                     required
                                 />
                             </div>

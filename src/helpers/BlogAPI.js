@@ -2,7 +2,7 @@ import Cookies from 'js-cookie';
 import qs from 'qs';
 
 // const BASEAPI = 'http://alunos.b7web.com.br:501';
-const BASEAPI = 'http://localhost/startec/api-cms';
+const BASEAPI = 'http://localhost/startec/api_cms';
 // const BASEAPI = 'http://api-cms.com.br';
 
 const apiFetchFile = async (endpoint, body) => {

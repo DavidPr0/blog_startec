@@ -90,7 +90,7 @@ const Page = () => {
                     }
                     <form id="form" onSubmit={handleSubmit}>
                         <label className="area">
-                            <div className="area--title">Nome: </div>
+                            <div className="area--title">*Nome: </div>
                             <div className="area--input">
                                 <input
                                     type="text"
